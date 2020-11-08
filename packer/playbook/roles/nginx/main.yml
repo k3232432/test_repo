@@ -1,0 +1,8 @@
+# - name : install nginx and modules
+#   become : yes
+#   amazon-linux-extras install : 
+#     name : nginx
+#     state : latest
+
+# 이거 고쳐야됨
+# ami 결정하고 바꾸는거 기억해야함

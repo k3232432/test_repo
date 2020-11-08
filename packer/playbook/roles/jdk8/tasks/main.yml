@@ -1,0 +1,11 @@
+- name : install OpenJDK8
+  become : yes
+  yum : 
+    name : java-1.8.0-openjdk-devel
+    state : latest
+
+- neme : select latest java version
+  become : yes
+  alternatives : 
+    name : java
+    path : /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.265.b01-1.amzn2.0.1.x86_64/bin/java
