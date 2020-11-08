@@ -1,0 +1,33 @@
+{
+    "_comment": "JDK8 base AMI using Amazon Linux (amzn-ami-hvm-2018.03.0.20180811-x86_64-ebs)",
+    "variables": {
+      "ami_name": "{{isotime}}-base-ami"
+    },
+    "builders": [
+      {
+        "type": "amazon-ebs",
+        "source_ami": "ami-0a10b2721688ce9d2",
+        "vpc_id": "vpc-8eb31ae5",
+        "subnet_id": "subnet-e2d4dbae",
+        "security_group_id": "sg-0d8ce18bee02b2d35",
+        "instance_type": "t2.micro",
+        "ssh_interface": "public_ip",
+        "ssh_username": "ec2-user",
+        "ami_name": "{{user `ami_name` | clean_ami_name}}",
+        "ami_description": "OpenJDK 8 with Amazon Linux",
+        "tags": {
+          "Name": "{{user `ami_name` | clean_ami_name}}",
+          "BaseAMI_Id": "{{ .SourceAMI }}",
+          "BaseAMI_Name": "{{ .SourceAMIName }}",
+          "TEAM": "RAPA4team"
+        },
+        "ami_users": ["k3232432@naver.com"]
+      }
+    ],
+    "provisioners": [
+      {
+        "type": "ansible",
+        "playbook_file": "playbook/main.yml"
+      }
+    ]
+  }
