@@ -13,10 +13,10 @@
         "instance_type": "t2.micro",
         "ssh_interface": "public_ip",
         "ssh_username": "ec2-user",
-        "ami_name": "{{user `ami_name` | clean_ami_name}}",
+        "ami_name": "{{user `ami_name`}}",
         "ami_description": "OpenJDK 8 with Amazon Linux",
         "tags": {
-          "Name": "{{user `ami_name` | clean_ami_name}}",
+          "Name": "{{user `ami_name`}}",
           "BaseAMI_Id": "{{ .SourceAMI }}",
           "BaseAMI_Name": "{{ .SourceAMIName }}",
           "TEAM": "RAPA4team"
@@ -27,7 +27,7 @@
     "provisioners": [
       {
         "type": "ansible",
-        "playbook_file": "playbook/main.yml"
+        "playbook_file": "/home/ec2-user/var/lib/jenkins/workspace/github_connect/packer/playbook/main.yml"
       }
     ]
   }
