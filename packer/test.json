@@ -27,8 +27,8 @@
     "provisioners": [
       {
         "type": "ansible",
-        "playbook_file": "playbook/main.yml"
+        "playbook_file": "/var/lib/jenkins/workspace/github_connect/packer/playbook/main.yml"
       }
     ]
   }
-//test.json 이랑 example.json 차이 확인하기 jenkins와 packer 안되서 확인 해야함
+
