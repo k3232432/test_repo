@@ -8,26 +8,25 @@
         "type": "amazon-ebs",
         "source_ami": "ami-0a10b2721688ce9d2",
         "vpc_id": "vpc-8eb31ae5",
-        "subnet_id": "",
-        "security_group_id": "",
+        "subnet_id": "subnet-e2d4dbae",
+        "security_group_id": "sg-08ce93a9977af5e19",
         "instance_type": "t2.micro",
         "ssh_interface": "public_ip",
         "ssh_username": "ec2-user",
-        "ami_name": "{{user `ami_name`}}",
+        "ami_name": "{{user `ami_name` | clean_resource_name }}",
         "ami_description": "OpenJDK 8 with Amazon Linux",
         "tags": {
-          "Name": "{{user `ami_name`}}",
+          "Name": "{{user `ami_name` | clean_resource_name }}",
           "BaseAMI_Id": "{{ .SourceAMI }}",
           "BaseAMI_Name": "{{ .SourceAMIName }}",
-          "TEAM": ""
-        },
-        "ami_users": [""]
+          "TEAM": "RAPA4team"
+        }
       }
     ],
     "provisioners": [
       {
         "type": "ansible",
-        "playbook_file": "/home/ec2-user/var/lib/jenkins/workspace/github_connect/packer/playbook/main.yml"
+        "playbook_file": "/var/lib/jenkins/workspace/github_connect/packer/playbook/main.yml"
       }
     ]
   }
