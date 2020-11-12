@@ -1,5 +1,5 @@
 - name : Amazon Linux based Java AMI
-  host : all
+  hosts : all
   roles : 
     - common
     - jdk8

@@ -6,7 +6,7 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "source_ami": "ami-0a10b2721688ce9d2",
+        "source_ami": "ami-03b42693dc6a7dc35",
         "vpc_id": "vpc-8eb31ae5",
         "subnet_id": "subnet-e2d4dbae",
         "security_group_id": "sg-08ce93a9977af5e19",
@@ -16,11 +16,7 @@
         "ami_name": "{{user `ami_name` | clean_resource_name }}",
         "ami_description": "OpenJDK 8 with Amazon Linux",
         "tags": {
-<<<<<<< HEAD
-          "Name": "{{user `ami_name` | clean_resource_name }}",
-=======
           "Name": "{{user `ami_name` | clean_resource_name}}",
->>>>>>> 311810654bb8d7aac6178e797eb5e1f11b59caa1
           "BaseAMI_Id": "{{ .SourceAMI }}",
           "BaseAMI_Name": "{{ .SourceAMIName }}",
           "TEAM": "RAPA4team"
