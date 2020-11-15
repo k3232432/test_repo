@@ -3,3 +3,7 @@
   service : 
     name : chronyd
     enabled : yes
+
+    # test for project
+    # jenkins test
+    
